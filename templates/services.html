@@ -1,0 +1,29 @@
+<!-- templates/services.html -->
+{% extends "base.html" %}
+
+{% block title %}Our Services - Ntandomods{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Our Services</h1>
+    <p>Comprehensive digital solutions tailored to your needs</p>
+</div>
+
+<div class="container">
+    <div class="grid">
+        {% for service_id, service in services.items() %}
+        <div class="service-card">
+            <div class="service-icon">{{ service.icon }}</div>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+            <ul class="service-features">
+                {% for feature in service.features %}
+                <li>{{ feature }}</li>
+                {% endfor %}
+            </ul>
+            <a href="{{ url_for('service_detail', service_id=service_id) }}" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">Learn More</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
