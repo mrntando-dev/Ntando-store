@@ -1,0 +1,116 @@
+<!-- templates/contact.html -->
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Ntandomods{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Get In Touch</h1>
+    <p>Let's discuss how we can help your business grow</p>
+</div>
+
+<div class="container">
+    <div style="max-width: 900px; margin: 0 auto;">
+        {% if success %}
+        <div class="alert alert-success">
+            <strong>✓ Success!</strong> Your message has been sent successfully. We'll get back to you within 24 hours.
+        </div>
+        {% endif %}
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+            <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <h2 style="margin-bottom: 1.5rem;">Contact Information</h2>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="font-size: 2rem;">📧</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@ntandomods.com</p>
+                        <p>support@ntandomods.com</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="font-size: 2rem;">📞</div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+1 (555) 123-4567</p>
+                        <p>+1 (555) 987-6543</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="font-size: 2rem;">💬</div>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="font-size: 2rem;">🕐</div>
+                    <div>
+                        <h4>Business Hours</h4>
+                        <p>Monday - Friday: 9am - 6pm</p>
+                        <p>Saturday - Sunday: 10am - 4pm</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <h2 style="margin-bottom: 1.5rem;">Send Us a Message</h2>
+                <form method="POST" action="{{ url_for('contact') }}">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interested In *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service...</option>
+                            <option value="domains">Premium Domains</option>
+                            <option value="apps">Premium Apps</option>
+                            <option value="phone_numbers">Premium Phone Numbers</option>
+                            <option value="uptime_monitoring">Uptime Monitoring</option>
+                            <option value="website_design">Website Design</option>
+                            <option value="hosting">Premium Hosting</option>
+                            <option value="updates">Premium Updates</option>
+                            <option value="whatsapp_bot">WhatsApp Bot</option>
+                            <option value="business_cards">Business Cards & Print</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-secondary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 3rem; border-radius: 12px; color: white; text-align: center;">
+            <h2 style="margin-bottom: 1rem;">Ready to Start Your Project?</h2>
+            <p style="font-size: 1.125rem; margin-bottom: 2rem; opacity: 0.9;">
+                We're here to help you succeed. Contact us today for a free consultation.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:info@ntandomods.com" class="btn btn-primary">Email Us</a>
+                <a href="tel:+15551234567" class="btn btn-outline" style="color: white; border-color: white;">Call Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @media (max-width: 768px) {
+        div[style*="grid-template-columns: 1fr 1fr"] {
+            grid-template-columns: 1fr !important;
+        }
+    }
+</style>
+{% endblock %}
