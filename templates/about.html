@@ -1,0 +1,40 @@
+<!-- templates/pricing.html -->
+{% extends "base.html" %}
+
+{% block title %}Pricing - Ntandomods{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Transparent Pricing</h1>
+    <p>Choose the plan that fits your needs</p>
+</div>
+
+<div class="container">
+    {% for service_id, plans in pricing.items() %}
+    <div style="margin-bottom: 4rem;">
+        <div class="section-title">
+            <h2>{{ services[service_id].icon }} {{ services[service_id].title }}</h2>
+            <p>{{ services[service_id].description }}</p>
+        </div>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            {% for plan in plans %}
+            <div class="pricing-card {% if loop.index == 2 %}featured{% endif %}">
+                <h3>{{ plan.name }}</h3>
+                <div class="price">{{ plan.price }}<span class="price-period">{{ plan.period }}</span></div>
+                {% if plan.monitors %}
+                <p style="margin: 1rem 0;">{{ plan.monitors }}</p>
+                {% endif %}
+                <a href="{{ url_for('contact') }}" class="btn btn-secondary" style="margin-top: 1rem;">Get Started</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+
+    <div style="text-align: center; padding: 3rem; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h2 style="margin-bottom: 1rem;">Need a Custom Solution?</h2>
+        <p style="margin-bottom: 1.5rem; font-size: 1.125rem;">We offer tailored packages for businesses with unique requirements</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-secondary">Contact Us</a>
+    </div>
+</div>
+{% endblock %}
