@@ -1,40 +1,112 @@
-<!-- templates/pricing.html -->
+<!-- templates/about.html -->
 {% extends "base.html" %}
 
-{% block title %}Pricing - Ntandomods{% endblock %}
+{% block title %}About Us - Ntandomods{% endblock %}
 
 {% block content %}
 <div class="hero">
-    <h1>Transparent Pricing</h1>
-    <p>Choose the plan that fits your needs</p>
+    <h1>About Ntandomods</h1>
+    <p>Your trusted partner in premium digital services</p>
 </div>
 
 <div class="container">
-    {% for service_id, plans in pricing.items() %}
-    <div style="margin-bottom: 4rem;">
-        <div class="section-title">
-            <h2>{{ services[service_id].icon }} {{ services[service_id].title }}</h2>
-            <p>{{ services[service_id].description }}</p>
+    <div style="max-width: 800px; margin: 0 auto;">
+        <div style="background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <h2 style="margin-bottom: 1rem;">Who We Are</h2>
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1rem;">
+                Ntandomods is a leading provider of premium digital services, specializing in domains, applications, 
+                website design, hosting, and more. We are committed to delivering excellence in every project we undertake.
+            </p>
+            <p style="font-size: 1.125rem; line-height: 1.8;">
+                Our team of experienced professionals brings together expertise in web development, design, cloud infrastructure,
+                and digital marketing to provide comprehensive solutions for businesses of all sizes.
+            </p>
         </div>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-            {% for plan in plans %}
-            <div class="pricing-card {% if loop.index == 2 %}featured{% endif %}">
-                <h3>{{ plan.name }}</h3>
-                <div class="price">{{ plan.price }}<span class="price-period">{{ plan.period }}</span></div>
-                {% if plan.monitors %}
-                <p style="margin: 1rem 0;">{{ plan.monitors }}</p>
-                {% endif %}
-                <a href="{{ url_for('contact') }}" class="btn btn-secondary" style="margin-top: 1rem;">Get Started</a>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    {% endfor %}
 
-    <div style="text-align: center; padding: 3rem; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        <h2 style="margin-bottom: 1rem;">Need a Custom Solution?</h2>
-        <p style="margin-bottom: 1.5rem; font-size: 1.125rem;">We offer tailored packages for businesses with unique requirements</p>
-        <a href="{{ url_for('contact') }}" class="btn btn-secondary">Contact Us</a>
+        <div style="background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <h2 style="margin-bottom: 1rem;">Our Mission</h2>
+            <p style="font-size: 1.125rem; line-height: 1.8;">
+                To empower businesses and individuals with premium digital services that drive growth, enhance online presence,
+                and deliver measurable results. We believe in quality, innovation, and customer satisfaction above all else.
+            </p>
+        </div>
+
+        <div style="background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <h2 style="margin-bottom: 1.5rem;">What We Offer</h2>
+            <div style="display: grid; gap: 1.5rem;">
+                <div style="display: flex; gap: 1rem; align-items: start;">
+                    <div style="font-size: 2rem;">🌐</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">Premium Domains</h3>
+                        <p>Secure memorable domain names that establish your brand identity and boost your online credibility.</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: start;">
+                    <div style="font-size: 2rem;">📱</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">Custom Applications</h3>
+                        <p>Develop powerful mobile and web applications tailored to your specific business requirements.</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: start;">
+                    <div style="font-size: 2rem;">💻</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">Website Design</h3>
+                        <p>Create stunning, responsive websites that captivate your audience and convert visitors into customers.</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: start;">
+                    <div style="font-size: 2rem;">🚀</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">Premium Hosting</h3>
+                        <p>Fast, secure, and reliable hosting solutions with 99.9% uptime guarantee and 24/7 support.</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: start;">
+                    <div style="font-size: 2rem;">⚡</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">Uptime Monitoring</h3>
+                        <p>Keep your websites and bots running smoothly with our advanced monitoring services.</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: start;">
+                    <div style="font-size: 2rem;">💬</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">WhatsApp Bot Solutions</h3>
+                        <p>Automate customer interactions and boost engagement with intelligent WhatsApp bots.</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: start;">
+                    <div style="font-size: 2rem;">🎨</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">Business Cards & Printing</h3>
+                        <p>Professional design and high-quality printing for business cards that leave a lasting impression.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); padding: 3rem; border-radius: 12px; color: white; text-align: center;">
+            <h2 style="margin-bottom: 1rem;">Why Choose Us?</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div>
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">500+</div>
+                    <p>Happy Clients</p>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">1000+</div>
+                    <p>Projects Completed</p>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">99.9%</div>
+                    <p>Uptime Rate</p>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">24/7</div>
+                    <p>Support Available</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
