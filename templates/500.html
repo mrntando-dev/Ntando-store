@@ -1,0 +1,18 @@
+<!-- templates/500.html -->
+{% extends "base.html" %}
+
+{% block title %}Server Error - Ntandomods{% endblock %}
+
+{% block content %}
+<div class="container" style="text-align: center; padding: 6rem 2rem;">
+    <div style="font-size: 8rem; margin-bottom: 1rem;">⚠️</div>
+    <h1 style="font-size: 3rem; margin-bottom: 1rem;">500 - Server Error</h1>
+    <p style="font-size: 1.25rem; margin-bottom: 2rem; color: var(--text-color);">
+        Something went wrong on our end. We're working to fix it!
+    </p>
+    <div>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Go Home</a>
+        <a href="{{ url_for('contact') }}" class="btn btn-outline" style="margin-left: 1rem;">Report Issue</a>
+    </div>
+</div>
+{% endblock %}
